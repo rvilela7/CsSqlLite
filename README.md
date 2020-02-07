@@ -1,0 +1,2 @@
+# CsSqlLite
+Trials with SqlLiteDB
