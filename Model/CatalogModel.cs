@@ -2,7 +2,7 @@
 
 namespace Model
 {
-    public class Catalog
+    public class Class1
     {
     }
 }
