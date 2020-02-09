@@ -6,6 +6,7 @@ namespace Model.CatalogCtx
     {
         public int Id { get; set; }
         public string Url { get; set; }
+        public string Name { get; set; }
         public List<Catalog> Catalogs { get; } = new List<Catalog>();
-    }
+    }   
 }

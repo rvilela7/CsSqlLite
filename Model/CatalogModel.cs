@@ -13,14 +13,18 @@ namespace Model
             this._catalogContext = catalogContext;
         }
 
-        public void CreateBook ()
+        public void CreateBook()
         {
             if (!_catalogContext.Catalog.Any())
             {
-                _catalogContext.Catalog.Add(new Catalog(){ Title = "Teste" });
+                _catalogContext.Catalog.Add(new Catalog() { Title = "Teste" });
             }
 
-            _catalogContext.Book.Add(new Book(){Url="AAA" });
+            _catalogContext.Book.Add(new Book()
+            {
+                Url = "AAA " + DateTime.Now.ToShortDateString(),
+                Name = "AAA",
+            });
         }
     }
 }
