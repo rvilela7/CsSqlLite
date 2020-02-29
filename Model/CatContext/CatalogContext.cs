@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.Extensions.Configuration;
 
 namespace Model.CatalogCtx
 {
@@ -11,6 +12,7 @@ namespace Model.CatalogCtx
         {
             //Try In appsettings.json
             options.UseSqlite("Data Source=Catalog.db");
+            //options.UseSqlite(ConfigurationExtensions.GetConnectionString(this, "SqlLiteDb");            
         }
     }
 }
