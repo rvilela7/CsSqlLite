@@ -15,16 +15,20 @@ namespace Model
 
         public void CreateBook()
         {
-            if (!_catalogContext.Catalog.Any())
-            {
-                _catalogContext.Catalog.Add(new Catalog() { Title = "Teste" });
-            }
+            if (_catalogContext.Catalog.Any())
+                return;
+
+            var myCatalog = new Catalog() { Title = "Catalog Demo" };
+            _catalogContext.Catalog.Add(myCatalog);
 
             _catalogContext.Book.Add(new Book()
             {
-                Url = "AAA " + DateTime.Now.ToShortDateString(),
-                Name = "AAA",
+                Name = "Book Demo",
+                Url = "Books4All",
+                CatalogId = myCatalog.Id,
             });
+
+            _catalogContext.SaveChangesAsync();
         }
     }
 }
